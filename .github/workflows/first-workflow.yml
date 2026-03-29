@@ -1,17 +1,15 @@
-name: multiple commands 
-
+name: Install nodejs
 on: push
-
-jobs:
-  commands:
+jobs: 
+  node-job:
     runs-on: ubuntu-latest
-
     steps:
-      - name: show date
-        run: date
+      - uses: actions/checkout@v4
+      
+      - name: install node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 20
 
-      - name: show current folder 
-        run: pwd
-     
-      - name: show files
-        run: ls -la
+      - name: check version
+        run: node --version
