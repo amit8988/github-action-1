@@ -1,11 +1,17 @@
-name: My first workflow
+name: multiple commands 
 
 on: push
 
 jobs:
-  hello:
+  commands:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print message
-        run: echo "mere toh L lag gaye......."
+      - name: show date
+        run: date
+
+      - name: show current folder 
+        run: pwd
+     
+      - name: show files
+        run: ls -la
